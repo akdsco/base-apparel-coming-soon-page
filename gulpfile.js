@@ -12,7 +12,7 @@ const clean = async () => {
 const html = () => src('./src/*.html')
   .pipe(dest('./build'));
 
-const scss = () => src('./src/scss/all.scss')
+const scss = () => src('./src/scss/main.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(cleanCSS({compatibility: 'ie8'}))
   .pipe(dest('./build/css/'))
