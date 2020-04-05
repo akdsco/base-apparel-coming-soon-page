@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1440px;
+  max-height: 800px;
+}
+
+.aside {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  &--logo {
+    align-self: flex-start;
+  }
+
+  &--image {
+
+  }
+
+  &--heading {
+
+  }
+
+  &--copy {
+    
+  }
+
+  &--form {
+
+  }
+
+  &--form-input {
+
+  }
+
+  &--form-submit-btn {
+
+  }
+
+  &--credits {
+    align-self: flex-end;
+    font-size: 11px; text-align: center;
+
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+@media(min-width: 700px) {
+  .main {
+    width: 57.639%;
+
+    &--image {
+      display: none;
+    }
+  }
+
+  .aside {
+    display: block;
+    width: 42.361%;
+
+    &--bg-image {
+      height: 100vh;
+      background-image: url('../../img/hero-desktop.jpg');
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media(min-width: 1440px) and (min-height: 800px) {
+  body {
+    // find how to center content after screen is bigger than 1440px x 800px
+    margin: auto;
+  }
+}
