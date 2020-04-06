@@ -16,50 +16,145 @@
 }
 
 .main {
+  margin-top: 2rem;
+
   &--logo {
+    margin-left: 4rem;
     align-self: flex-start;
-  }
-
-  &--image {
-
+    height: 1.3rem;
+    max-width: 158px;
   }
 
   &--heading {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-align: center;
+    font-size: 2.75rem;
+    font-weight: 600;
+    margin: 12% auto 0 auto;
+    color: $neutral-dark-greyish-red;
 
+    span {
+      font-weight: 300;
+      color: $primary-desaturated-red;
+    }
   }
 
   &--copy {
-    
+    margin: 1rem 1.5625rem 2rem;
+    text-align: center;
+    color: $primary-desaturated-red;
+    font-size: .875rem;
   }
 
   &--form {
-
+    //margin: 0 1.5625rem;
+    margin: 0 auto;
+    //width: 92%;
   }
 
   &--form-input {
-
+    display: block;
+    border-radius: 28px;
+    border-style: solid;
+    border-width: 1px;
+    height: 3.5rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 1.8rem;
+    font-size: .75rem;
+    color: $primary-desaturated-red;
+    &::placeholder {
+      color: $primary-desaturated-red;
+      letter-spacing: .5px;
+    }
+    &:focus {
+      outline-style: unset;
+      border-color: $primary-soft-red;
+    }
   }
 
   &--form-submit-btn {
-
+    position: relative;
+    background-image: $gradient-two;
+    border-style: unset;
+    left: calc(100% - 70px);
+    top: -53px;
+    width: 70px;
+    border-radius: 28px;
+    height: 53px; // 53px
   }
 
   &--credits {
-    align-self: flex-end;
+    align-self: center;
     font-size: 11px; text-align: center;
+    //margin-top: 4rem;
+    margin-bottom: 0;
 
     a {
-      color: hsl(228, 45%, 44%);
+      color: $primary-desaturated-red;
+      text-decoration: none;
+      &:hover {
+        color: $primary-soft-red;
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      color: $primary-soft-red;
+      font-size: 18px;
     }
   }
 }
 
-@media(min-width: 700px) {
+@media (min-width: 474px) {
+  // making sure submit btn does not move right further than 330px
+  .main--form-submit-btn {
+    left: 355px;
+  }
+}
+
+@media(min-width: 840px) {
   .main {
+    max-height: 800px;
     width: 57.639%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4.4rem; // em?
+
+    &--logo-container {
+      width: 416px;
+    }
+
+    &--logo {
+      margin: 0;
+      height: 2.3rem;
+    }
 
     &--image {
       display: none;
+    }
+
+    &--container {
+      //margin-left: 4rem;
+      max-width: 427px;
+    }
+
+    &--heading {
+      text-align: left;
+      letter-spacing: 18px;
+      font-size: 3.875rem;
+    }
+
+    &--copy {
+      margin: 2rem 0 3.2rem;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    &--form {
+      margin: 0;
     }
   }
 
