@@ -16,7 +16,7 @@
 }
 
 .main {
-  margin-top: 2rem;
+  padding-top: 2rem;
 
   &--logo {
     margin-left: 4rem;
@@ -48,9 +48,7 @@
   }
 
   &--form {
-    //margin: 0 1.5625rem;
     margin: 0 auto;
-    //width: 92%;
   }
 
   &--form-input {
@@ -58,7 +56,7 @@
     border-radius: 28px;
     border-style: solid;
     border-width: 1px;
-    height: 3.5rem;
+    height: 52px;
     width: 100%;
     max-width: 400px;
     padding: 1rem 1.8rem;
@@ -76,19 +74,37 @@
 
   &--form-submit-btn {
     position: relative;
-    background-image: $gradient-two;
+    background: $gradient-two;
     border-style: unset;
+    cursor: pointer;
     left: calc(100% - 70px);
-    top: -53px;
-    width: 70px;
+    top: -52px;
+    width: 90px;
     border-radius: 28px;
-    height: 53px; // 53px
+    height: 52px; // 52px
+    &:hover {
+      background: $secondary-desaturated-red;
+      box-shadow: 0 12px 14px 3px #f5d6d6;
+    }
+  }
+
+  &--form-invalid-icon {
+    position: relative;
+    top: -49px;
+    left: 203px;
+  }
+
+  &--form-invalid-info {
+    position: relative;
+    top: -46px;
+    left: 27px;
+    font-size: .75rem;
+    color: $primary-soft-red;
   }
 
   &--credits {
     align-self: center;
     font-size: 11px; text-align: center;
-    //margin-top: 4rem;
     margin-bottom: 0;
 
     a {
@@ -110,17 +126,18 @@
 @media (min-width: 474px) {
   // making sure submit btn does not move right further than 330px
   .main--form-submit-btn {
-    left: 355px;
+    left: 330px;
   }
 }
 
 @media(min-width: 840px) {
   .main {
+    background: url("../../img/bg-pattern-desktop.svg") 0 0 no-repeat, $gradient-one 0 0 no-repeat;
     max-height: 800px;
     width: 57.639%;
     justify-content: space-between;
     align-items: center;
-    margin-top: 4.4rem; // em?
+    padding-top: 4.4rem;
 
     &--logo-container {
       width: 416px;
@@ -136,8 +153,7 @@
     }
 
     &--container {
-      //margin-left: 4rem;
-      max-width: 427px;
+      max-width: 422px;
     }
 
     &--heading {
