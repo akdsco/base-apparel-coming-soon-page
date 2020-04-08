@@ -16,13 +16,22 @@
 }
 
 .main {
-  padding-top: 2rem;
+  padding-top: 1.4rem;
 
   &--logo {
-    margin-left: 4rem;
+    margin-left: 1.5625rem;
+    margin-bottom: 1.4rem;
     align-self: flex-start;
     height: 1.3rem;
     max-width: 158px;
+  }
+
+  &--container {
+    background: $gradient-one;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &--heading {
@@ -48,7 +57,9 @@
   }
 
   &--form {
-    margin: 0 auto;
+    //margin: 0 auto;
+    width: 85%;
+    max-width: 400px;
   }
 
   &--form-input {
@@ -79,7 +90,7 @@
     cursor: pointer;
     left: calc(100% - 70px);
     top: -52px;
-    width: 90px;
+    width: 80px;
     border-radius: 28px;
     height: 52px; // 52px
     &:hover {
@@ -91,7 +102,7 @@
   &--form-invalid-icon {
     position: relative;
     top: -49px;
-    left: 203px;
+    left: calc(100% - 183px);
   }
 
   &--form-invalid-info {
@@ -125,19 +136,52 @@
 
 @media (min-width: 474px) {
   // making sure submit btn does not move right further than 330px
-  .main--form-submit-btn {
-    left: 330px;
+  //.main--form-submit-btn {
+  //  left: 330px;
+  //}
+}
+
+@media(min-width: 500px) {
+  .main {
+    &--form {
+      margin: 0;
+      //width: 100%;
+    }
+
+    &--form-input {
+      //max-width: 400px;
+    }
+
+    &--form-submit-btn {
+      //left: calc(100% - 70px);
+      left: 330px;
+      width: 90px;
+    }
+
+    &--form-invalid-icon {
+      //position: relative;
+      //top: -49px;
+      left: 207px;
+    }
+
+    //&--form-invalid-info {
+    //  //position: relative;
+    //  top: -46px;
+    //  left: 27px;
+    //  font-size: .75rem;
+    //  color: $primary-soft-red;
+    //}
   }
 }
 
 @media(min-width: 840px) {
   .main {
     background: url("../../img/bg-pattern-desktop.svg") 0 0 no-repeat, $gradient-one 0 0 no-repeat;
+    padding-top: 2rem;
     max-height: 800px;
     width: 57.639%;
     justify-content: space-between;
     align-items: center;
-    padding-top: 4.4rem;
 
     &--logo-container {
       width: 416px;
@@ -154,12 +198,15 @@
 
     &--container {
       max-width: 422px;
+      background: none;
+      display: block;
     }
 
     &--heading {
       text-align: left;
       letter-spacing: 18px;
       font-size: 3.875rem;
+      margin: 12% 0 0 0;
     }
 
     &--copy {
@@ -171,7 +218,41 @@
 
     &--form {
       margin: 0;
+      width: 100%;
     }
+
+    &--form-input {
+      //max-width: 400px;
+
+      //&::placeholder {
+      //  color: $primary-desaturated-red;
+      //  letter-spacing: .5px;
+      //}
+      //&:focus {
+      //  outline-style: unset;
+      //  border-color: $primary-soft-red;
+      //}
+    }
+
+    &--form-submit-btn {
+      left: calc(100% - 70px);
+      //left: 330px;
+      //width: 90px;
+    }
+
+    &--form-invalid-icon {
+      //position: relative;
+      //top: -49px;
+      //left: 207px;
+    }
+
+    //&--form-invalid-info {
+    //  position: relative;
+    //  top: -46px;
+    //  left: 27px;
+    //  font-size: .75rem;
+    //  color: $primary-soft-red;
+    //}
   }
 
   .aside {
