@@ -1,6 +1,7 @@
 // Mobile First CSS
 
 .container {
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -84,7 +85,10 @@
     }
     &:focus {
       outline-style: unset;
-      border-color: $primary-soft-red;
+      border: 2px solid $primary-desaturated-red;
+    }
+    &__invalid {
+      border: 2px solid red;
     }
   }
 
@@ -102,6 +106,10 @@
       background: $secondary-desaturated-red;
       box-shadow: 0 12px 14px 3px #f5d6d6;
     }
+    &:focus {
+      outline-style: unset;
+      border: 3px solid $primary-desaturated-red;
+    }
   }
 
   &--form-invalid-icon {
@@ -109,6 +117,9 @@
     position: relative;
     top: -49px;
     left: calc(100% - 183px);
+    &__displayed {
+      display: inline;
+    }
   }
 
   &--form-invalid-info {
@@ -118,6 +129,9 @@
     left: 27px;
     font-size: .75rem;
     color: $primary-soft-red;
+    &__displayed {
+      display: block;
+    }
   }
 
   &--credits {
@@ -128,9 +142,11 @@
     a {
       color: $primary-desaturated-red;
       text-decoration: none;
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-soft-red;
         text-decoration: underline;
+        outline: unset;
       }
     }
 
