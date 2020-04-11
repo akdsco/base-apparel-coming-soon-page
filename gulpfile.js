@@ -2,6 +2,8 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const cleanCSS = require('gulp-clean-css');
+let babel = require('gulp-babel');
+let uglify = require('gulp-uglify');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
@@ -21,7 +23,9 @@ const scss = () => src('./src/scss/main.scss')
 const img = () => src('./src/img/*')
   .pipe(dest('./build/img/'));
 
-const js = () => src('./src/js/**.js')
+const js = () => src(['node_modules/babel-polyfill/dist/polyfill.js', './src/js/**.js'])
+  .pipe(babel({presets: ["@babel/preset-env"]}))
+  .pipe(uglify())
   .pipe(dest('./build/js/'));
 
 const watchChange = () => {
