@@ -5,26 +5,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: $design-width-desktop;
   max-height: 800px;
 }
-
-.active {
-  display: block;
-}
-
 .aside {
   display: none;
 }
-
-.flex {
+.main {
   display: flex;
   flex-direction: column;
-}
-
-.main {
   padding-top: 1.4rem;
-
   &--logo {
     margin-left: 1.5625rem;
     margin-bottom: 1.4rem;
@@ -32,20 +22,17 @@
     height: 1.3rem;
     max-width: 158px;
   }
-
   &--image-container {
     min-height: 250px;
     background: url("../../img/hero-mobile.jpg") top;
   }
-
   &--container {
     background: $gradient-one;
-    padding: 10px;
+    padding: .625rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   &--heading {
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -54,25 +41,21 @@
     font-weight: 600;
     margin: 12% auto 0 auto;
     color: $neutral-dark-greyish-red;
-
     span {
       font-weight: 300;
       color: $primary-desaturated-red;
     }
   }
-
   &--copy {
     margin: 1rem 1.5625rem 2rem;
     text-align: center;
     color: $primary-desaturated-red;
     font-size: .875rem;
   }
-
   &--form {
     width: 90%;
     max-width: 400px;
   }
-
   &--form-input {
     display: block;
     border-radius: 28px;
@@ -93,10 +76,9 @@
       border: 2px solid $primary-desaturated-red;
     }
     &__invalid {
-      border: 2px solid red;
+      border: 2px solid $primary-soft-red;
     }
   }
-
   &--form-submit-btn {
     position: relative;
     background: $gradient-two;
@@ -106,7 +88,7 @@
     top: -52px;
     width: 70px;
     border-radius: 28px;
-    height: 52px; // 52px
+    height: 52px;
     &:hover {
       background: $secondary-desaturated-red;
       box-shadow: 0 12px 14px 3px #f5d6d6;
@@ -116,17 +98,15 @@
       border: 3px solid $primary-desaturated-red;
     }
   }
-
   &--form-invalid-icon {
     display: none;
     position: relative;
     top: -49px;
-    left: calc(100% - 183px);
+    left: calc(100% - 173px);
     &__displayed {
       display: inline;
     }
   }
-
   &--form-invalid-info {
     display: none;
     position: relative;
@@ -138,12 +118,11 @@
       display: block;
     }
   }
-
   &--credits {
     align-self: center;
-    font-size: 11px; text-align: center;
+    font-size: .6875rem;
+    text-align: center;
     margin-bottom: 0;
-
     a {
       color: $primary-desaturated-red;
       text-decoration: none;
@@ -154,10 +133,9 @@
         outline: unset;
       }
     }
-
     span {
       color: $primary-soft-red;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 }
@@ -175,20 +153,16 @@
 
 @media(min-width: 500px) {
   .main {
-
-    &--copy {
-      width: 66%;
-    }
-
     &--image-container {
       background-position-y: 22%;
     }
-
+    &--copy {
+      width: 66%;
+    }
     &--form-submit-btn {
       left: 330px;
       width: 90px;
     }
-
     &--form-invalid-icon {
       left: 207px;
     }
@@ -205,33 +179,27 @@
     width: 57.639%;
     justify-content: space-between;
     align-items: center;
-
     &--logo-container {
       width: 416px;
     }
-
     &--logo {
       margin: 0;
       height: 2.3rem;
     }
-
     &--image-container {
       display: none;
     }
-
     &--container {
       max-width: 422px;
       background: none;
       display: block;
     }
-
     &--heading {
       text-align: left;
       letter-spacing: 18px;
       font-size: 3.875rem;
       margin: 12% 0 0 0;
     }
-
     &--copy {
       margin: 2rem 0 3.2rem;
       width: 100%;
@@ -239,33 +207,21 @@
       font-size: 1rem;
       line-height: 1.9;
     }
-
     &--form {
       width: 100%;
     }
-
     &--form-submit-btn {
       left: calc(100% - 70px);
     }
   }
-
   .aside {
     display: block;
     width: 42.361%;
-
     &--bg-image {
       height: 100vh;
+      min-height: 800px;
       background-image: url('../../img/hero-desktop.jpg');
       background-repeat: no-repeat;
     }
-  }
-}
-
-// Size bigger than design sketches -> center
-
-@media(min-width: 1440px) and (min-height: 800px) {
-  body {
-    // find how to center content after screen is bigger than 1440px x 800px
-    margin: auto;
   }
 }
