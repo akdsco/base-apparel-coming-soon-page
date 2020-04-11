@@ -8,7 +8,7 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 
 const clean = async () => {
-  await del(['build']);
+  await del(['build','./index.html']);
 };
 
 const html = () => src('./src/*.html')
@@ -31,7 +31,7 @@ const js = () => src(['node_modules/babel-polyfill/dist/polyfill.js', './src/js/
 const watchChange = () => {
   browserSync.init({
     server: {
-      baseDir: './build'
+      baseDir: './'
     }
   });
   watch('./src/scss/**/*.scss', scss).on('change', browserSync.reload);
