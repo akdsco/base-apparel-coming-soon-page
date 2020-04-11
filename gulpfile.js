@@ -12,7 +12,7 @@ const clean = async () => {
 };
 
 const html = () => src('./src/*.html')
-  .pipe(dest('./build'));
+  .pipe(dest('./'));
 
 const scss = () => src('./src/scss/main.scss')
   .pipe(sass().on('error', sass.logError))
