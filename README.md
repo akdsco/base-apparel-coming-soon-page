@@ -26,3 +26,7 @@ Gulp functions explained:
 `gulp watch` - serves production folder locally (default `localhost:3000`) and
 watches for changes in files, if change occurs in any souce file it automatically
 updates and refreshes your local server
+
+##### Live
+
+Check out live page [here](https://akdsco.github.io/base-apparel-coming-soon-page/).
