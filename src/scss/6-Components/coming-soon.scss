@@ -33,6 +33,11 @@
     max-width: 158px;
   }
 
+  &--image-container {
+    min-height: 250px;
+    background: url("../../img/hero-mobile.jpg") top;
+  }
+
   &--container {
     background: $gradient-one;
     padding: 10px;
@@ -64,7 +69,7 @@
   }
 
   &--form {
-    width: 85%;
+    width: 90%;
     max-width: 400px;
   }
 
@@ -99,7 +104,7 @@
     cursor: pointer;
     left: calc(100% - 70px);
     top: -52px;
-    width: 80px;
+    width: 70px;
     border-radius: 28px;
     height: 52px; // 52px
     &:hover {
@@ -159,9 +164,13 @@
 
 // Tablet View Adjustments
 
-// adjust image here...
 @media(min-width: 390px) {
-
+  .main--image-container {
+    min-height: 57%;
+    background: url("../../img/hero-desktop.jpg") top;
+    background-size: cover;
+    background-position-y: 22%;
+  }
 }
 
 @media(min-width: 500px) {
@@ -169,6 +178,10 @@
 
     &--copy {
       width: 66%;
+    }
+
+    &--image-container {
+      background-position-y: 22%;
     }
 
     &--form-submit-btn {
@@ -202,7 +215,7 @@
       height: 2.3rem;
     }
 
-    &--image {
+    &--image-container {
       display: none;
     }
 

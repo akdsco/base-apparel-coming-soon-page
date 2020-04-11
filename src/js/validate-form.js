@@ -5,9 +5,6 @@ const invalidIcon = document.getElementById('invalid-icon');
 const invalidInfo = document.getElementById('invalid-info');
 let flag = true;
 
-// TODO change btn size to smaller on mobile screen
-// TODO figure out how to adjust picture for tablet screen
-
 emailSubmitBtn.onclick = function (e) {
   e.preventDefault();
   const isEmail = validateEmail(emailInput.value);
