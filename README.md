@@ -29,4 +29,4 @@ updates and refreshes your local server
 
 ##### Live
 
-Check out live page [here](https://akdsco.github.io/base-apparel-coming-soon-page/).
+Check out live page [here](http://base-apparel.ostrowski.co/).

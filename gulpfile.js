@@ -8,11 +8,11 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 
 const clean = async () => {
-  await del(['build','./index.html']);
+  await del(['build']);
 };
 
 const html = () => src('./src/*.html')
-  .pipe(dest('./'));
+  .pipe(dest('./build'));
 
 const scss = () => src('./src/scss/main.scss')
   .pipe(sass().on('error', sass.logError))
@@ -31,7 +31,7 @@ const js = () => src(['node_modules/babel-polyfill/dist/polyfill.js', './src/js/
 const watchChange = () => {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './build'
     }
   });
   watch('./src/scss/**/*.scss', scss).on('change', browserSync.reload);
